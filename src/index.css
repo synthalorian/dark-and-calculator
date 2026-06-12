@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-bg-deep: #0a0514;
+  --color-bg-panel: #120a20;
+  --color-bg-input: #1a0f2e;
+  --color-border-dim: #2a1a4a;
+  --color-border-glow: #4a2a8a;
+  --color-neon-purple: #b026ff;
+  --color-neon-pink: #ff2a6d;
+  --color-neon-cyan: #05d9e8;
+  --color-neon-amber: #ff9f1c;
+  --color-neon-green: #39ff14;
+  --color-text-primary: #e0d0f0;
+  --color-text-secondary: #a080c0;
+  --color-text-dim: #604080;
+  --color-text-bright: #f0e8ff;
+  --color-rarity-poor: #555;
+  --color-rarity-common: #4a4a4a;
+  --color-rarity-uncommon: #1a6b3a;
+  --color-rarity-rare: #1a3f7a;
+  --color-rarity-epic: #4a1a7a;
+  --color-rarity-legendary: #7a4a00;
+  --color-rarity-unique: #7a001a;
+}
+
+html {
+  background: var(--color-bg-deep);
+  color: var(--color-text-primary);
+  font-family: 'Rajdhani', sans-serif;
+}
+
+body {
+  background: var(--color-bg-deep);
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, #1a0a3a00 0%, #0a0514 70%),
+    linear-gradient(0deg, transparent 24%, #b026ff08 25%, #b026ff08 26%, transparent 27%, transparent 74%, #b026ff08 75%, #b026ff08 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, #b026ff08 25%, #b026ff08 26%, transparent 27%, transparent 74%, #b026ff08 75%, #b026ff08 76%, transparent 77%, transparent);
+  background-size: 100% 100%, 50px 50px, 50px 50px;
+}
+
+.font-display {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-body {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.neon-text-purple {
+  text-shadow: 0 0 10px #b026ff, 0 0 20px #b026ff44, 0 0 40px #b026ff22;
+}
+
+.neon-text-cyan {
+  text-shadow: 0 0 10px #05d9e8, 0 0 20px #05d9e844, 0 0 40px #05d9e822;
+}
+
+.neon-text-pink {
+  text-shadow: 0 0 10px #ff2a6d, 0 0 20px #ff2a6d44, 0 0 40px #ff2a6d22;
+}
+
+.neon-border-purple {
+  box-shadow: 0 0 10px #b026ff44, inset 0 0 10px #b026ff11;
+}
+
+.neon-border-cyan {
+  box-shadow: 0 0 10px #05d9e844, inset 0 0 10px #05d9e811;
+}
+
+.panel-glow {
+  background: linear-gradient(135deg, #120a20 0%, #1a0f2e 100%);
+  border: 1px solid #2a1a4a;
+  box-shadow: 0 0 20px #b026ff11, inset 0 1px 0 #4a2a8a33;
+}
+
+.panel-glow:hover {
+  border-color: #4a2a8a;
+  box-shadow: 0 0 30px #b026ff22, inset 0 1px 0 #4a2a8a55;
+}
+
+input[type="number"],
+input[type="text"],
+select {
+  background: #1a0f2e;
+  border: 1px solid #2a1a4a;
+  color: #e0d0f0;
+  font-family: 'Rajdhani', sans-serif;
+  transition: all 0.2s;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+select:focus {
+  outline: none;
+  border-color: #b026ff;
+  box-shadow: 0 0 10px #b026ff33;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0514;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a1a4a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4a2a8a;
+}
+
+/* Animations */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px #b026ff22; }
+  50% { box-shadow: 0 0 40px #b026ff44; }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+.scanline::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #b026ff33, transparent);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+}
