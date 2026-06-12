@@ -1,7 +1,8 @@
 import { useState, useCallback, useMemo } from 'react';
 import { WEAPONS, RARITIES, rarityDmg, rarityMagDmg } from '../data/weapons';
 import { SPELLS, BUFFS, ENEMY_TYPES } from '../data/spells';
-import type { AttackerState, TargetState, SwingResult, CalcMeta, Buff, Spell } from '../types';
+import type { Spell } from '../data/spells';
+import type { AttackerState, TargetState, SwingResult, CalcMeta, Buff } from '../types';
 
 function scaleTime(base: number, actionSpeed: number): number {
   const s = 1 + actionSpeed / 100;
