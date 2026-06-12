@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# Dark and Calculator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A synthwave-themed combat calculator for **Dark and Darker**, built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+![Synthwave '84 Edition](https://img.shields.io/badge/Synthwave-%2784-purple?style=for-the-badge&logo=react)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Credits
 
-## React Compiler
+- **Original calculator** by [AntonMarkham](https://github.com/AntonMarkham/dad_calculator) — the weapon database, damage formulas, and timing data were ported from the original HTML/CSS/JS implementation.
+- **This fork** adds a modern React/TypeScript stack, synthwave '84 aesthetic, expanded D&D systems (spells, buffs, status effects, enemy types), and a modular UI.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **40+ weapons** across Swords, Maces, Daggers, Polearms, Axes, Bows, Crossbows, Firearms, and Magic Staves
+- **Rarity-based damage interpolation** (Poor → Unique)
+- **Full combat timing**: windup, hit, hitstop, recover, alt-recover, finish phases
+- **Action speed scaling**, combo multipliers, hit location multipliers
+- **PDR/MDR armor reduction**, flat reduction, block/shield %
+- **Per-swing breakdown** with HP bar visualization
+- **TTK summary cards** (hits to kill, DPS, windup time)
+- **Spells & Buffs**: 10 spells across Arcane/Divine/Nature/Shadow schools, 8 status effects
+- **14 enemy presets** with weaknesses and resistances
+- **Synthwave '84 theme**: deep purples, neon glows, grid backgrounds, Orbitron + Rajdhani fonts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Development
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Build
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
+
+Outputs static files to `dist/` — ready for GitHub Pages, Netlify, Vercel, etc.
+
+## License
+
+MIT — see [LICENSE](LICENSE) for details.
+
+## Acknowledgments
+
+- Weapon data and formulas from [AntonMarkham/dad_calculator](https://github.com/AntonMarkham/dad_calculator)
+- Dark and Darker is a trademark of IRONMACE Co., Ltd.
