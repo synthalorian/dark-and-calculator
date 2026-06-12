@@ -37,9 +37,7 @@ function App() {
 
         <div className="mt-4">
           <BuffsPanel
-            activeBuffs={activeBuffs}
             activeSpells={activeSpells}
-            onToggleBuff={toggleBuff}
             onToggleSpell={toggleSpell}
           />
         </div>
