@@ -1,3 +1,5 @@
+![dark-and-calculator](.github/preview.png)
+
 # Dark and Calculator
 
 A synthwave-themed combat calculator for **Dark and Darker**, built with React, TypeScript, and Vite.
