@@ -1,3 +1,4 @@
+import type { Buff, EnemyType } from '../types';
 export interface Spell {
   id: string;
   name: string;
@@ -914,5 +915,5 @@ export const damageTypeColors: Record<string, string> = {
 
 // Legacy exports for compatibility
 export const SPELLS = spells;
-export const BUFFS: any[] = [];
-export const ENEMY_TYPES: any[] = [];
+export const BUFFS: Buff[] = [];
+export const ENEMY_TYPES: EnemyType[] = [];
