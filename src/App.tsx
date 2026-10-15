@@ -9,13 +9,11 @@ function App() {
   const {
     attacker,
     target,
-    activeBuffs,
     activeSpells,
     selectedEnemy,
     results,
     updateAttacker,
     updateTarget,
-    toggleBuff,
     toggleSpell,
     applyEnemy,
   } = useCalculator();
