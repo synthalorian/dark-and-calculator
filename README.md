@@ -41,7 +41,7 @@ Outputs static files to `dist/` — ready for GitHub Pages, Netlify, Vercel, etc
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for details.
+Apache-2.0 — see [LICENSE](LICENSE) for details.
 
 ## Acknowledgments
 
